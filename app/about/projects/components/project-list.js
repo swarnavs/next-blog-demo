@@ -1,11 +1,14 @@
+"use client";
 import Card from "@/components/card";
+import { useEffect, useState } from "react";
 
 export default async function ProjectList() {
-  const response = await fetch(
-    "https://github.com/swarnavs/demo-data"
-    // { cache: 'no-store' }
-  );
-  const repos = await response.json();
+  const [repos, setRepos] = useState([]);
+  useEffect(() => {
+    fetch("/repos.json") // Fetch from public folder
+      .then((res) => res.json())
+      .then((data) => setRepos(data));
+  }, []);
 
   return (
     <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -24,3 +27,4 @@ export default async function ProjectList() {
     </ul>
   );
 }
+
