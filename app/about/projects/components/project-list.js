@@ -2,7 +2,7 @@
 import Card from "@/components/card";
 import { useEffect, useState } from "react";
 
-export default async function ProjectList() {
+export default function ProjectList() {
   const [repos, setRepos] = useState([]);
   useEffect(() => {
     fetch("/repos.json") // Fetch from public folder
@@ -27,4 +27,3 @@ export default async function ProjectList() {
     </ul>
   );
 }
-

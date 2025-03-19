@@ -11,7 +11,7 @@ export default async function Home() {
     <>
       <section className="mb-8">
         <H1>Welcome to my page!</H1>
-        <p>It's a demo project for bloging.</p>
+        <p>It is a demo project for bloging.</p>
         <p>
           Checkout my{" "}
           <Link href="/about/projects" className="underline">
